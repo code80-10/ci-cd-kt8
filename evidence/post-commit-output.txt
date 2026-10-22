@@ -1,0 +1,13 @@
+﻿[pre-commit] Running AStyle...
+без изменений    src\main.cpp
+[pre-commit] Formatting changes were not needed.
+[post-commit] Last three commits:
+e010c24 Add-hook-verification-evidence
+c292b18 Verify automatic formatting
+6141def Add minimal C++ project
+[post-commit] Running cppcheck...
+Checking src\main.cpp ...
+[main e010c24] Add-hook-verification-evidence
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 evidence/cppcheck-output.txt
+ create mode 100644 evidence/pre-commit-output.txt
