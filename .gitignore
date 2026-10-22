@@ -1,6 +1,9 @@
 build/
+tmp/
 .idea/
 .vscode/
 *.exe
 *.o
 *.obj
+~$*
+*.orig

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+PATH="/c/msys64/ucrt64/bin:$PATH"
+export PATH
+
+echo "[post-commit] Last three commits:"
+git log -3 --oneline
+
+echo "[post-commit] Running cppcheck..."
+files=$(git ls-files '*.c' '*.cc' '*.cpp' '*.cxx')
+if [ -n "$files" ]; then
+    cppcheck --enable=warning,style,performance,portability $files
+else
+    echo "No C/C++ source files found."
+fi

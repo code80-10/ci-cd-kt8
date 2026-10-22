@@ -1,0 +1,19 @@
+#!/bin/sh
+
+PATH="/c/msys64/ucrt64/bin:$PATH"
+export PATH
+
+echo "[pre-commit] Running AStyle..."
+
+files=$(git ls-files '*.c' '*.cc' '*.cpp' '*.cxx' '*.h' '*.hh' '*.hpp' '*.hxx')
+[ -z "$files" ] && exit 0
+
+astyle --style=allman --suffix=none $files
+
+changed=$(git diff --name-only -- $files)
+if [ -n "$changed" ]; then
+    git add -- $changed
+    echo "[pre-commit] Formatted files added to the commit."
+else
+    echo "[pre-commit] Formatting changes were not needed."
+fi
