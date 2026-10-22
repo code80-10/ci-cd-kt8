@@ -2,6 +2,6 @@
 
 int main()
 {
-    std::cout << "Git hooks demo" << std::endl;
+    std::cout << "Git hooks are active" << std::endl;
     return 0;
 }
